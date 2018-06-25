@@ -23,6 +23,7 @@
  */
 
 $string['pluginname'] = 'Autofill';
+$string['defaultplaceholder'] = 'Select an option';
 $string['privacy:metadata:profilefield_autofill:userid'] = 'The ID of the user which data is stored by the autofill plugin.';
 $string['privacy:metadata:profilefield_autofill:fieldid'] = 'The ID of the profile field.';
 $string['privacy:metadata:profilefield_autofill:data'] = 'The stored user data.';

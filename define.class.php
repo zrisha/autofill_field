@@ -39,6 +39,9 @@ class profile_define_autofill extends profile_define_base {
         $form->addElement('textarea', 'param1', get_string('profilemenuoptions', 'admin'), array('rows' => 6, 'cols' => 40));
         $form->setType('param1', PARAM_TEXT);
 
+        $form->addElement('text', 'param2', 'Placeholder', 'size="50"');
+        $form->setType('param2', PARAM_TEXT);
+
         // Default data.
         $form->addElement('text', 'defaultdata', get_string('profiledefaultdata', 'admin'), 'size="50"');
         $form->setType('defaultdata', PARAM_TEXT);

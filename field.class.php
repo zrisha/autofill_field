@@ -64,6 +64,14 @@ class profile_field_autofill extends profile_field_base {
             $this->options[$option] = format_string($option, true, ['context' => context_system::instance()]);
         }
 
+        //Param 2 for placeholder
+        if (isset($this->field->param2) && !empty($this->field->param2)) {
+            $this->placeholder = $this->field->param2;
+        } else {
+            $this->placeholder =  get_string('defaultplaceholder', 'profilefield_autofill');  
+        }
+     
+
         // Set the data key.
         if ($this->data !== null) {
             $key = $this->data;
@@ -79,11 +87,11 @@ class profile_field_autofill extends profile_field_base {
      * Overwrites the base class method
      * @param moodleform $mform Moodle form instance
      */
-    public function edit_field_add($mform) {                                                                                          
+    public function edit_field_add($mform) {                                                                                 
         $options = array(                                                                                                           
             'multiple' => false,
-            'noselectionstring' => get_string('allareas', 'search'),                                                                                          
-            'placeholder' => 'Select an Organization'                                                               
+            'noselectionstring' => 'None selected',                                                                                          
+            'placeholder' => $this->placeholder                                                            
         );   
         $mform->addElement('autocomplete', $this->inputname, format_string($this->field->name), $this->options, $options);
     }
